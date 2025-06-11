@@ -3,19 +3,15 @@ from datetime import datetime
 
 regions = {
     "north": {
-        "Jacksonville Beach Pier": "41112",
-        "Ponte Vedra": "41112",
-        "St. Augustine Pier": "41112",
-        "Ponce Inlet": "41012"
+        "Jacksonville Beach PierPonte VedraSt. Augustine ": "41112",
     },
     "central": {
-        "New Smyrna Beach": "41012",
-        "Flagler Pier": "41113"
+      
+        "Flagler Beach, New Smyrna Beach, Cocoa Beach": "41113"
     },
     "south": {
-        "Port St. Lucie": "41114",
-        "Fort Lauderdale": "41114",
-        "Jupiter": "41114"
+        "Port St. Lucie, Jupiter, Fort Lauderdale Beaches": "41114",
+    
     }
 }
 
