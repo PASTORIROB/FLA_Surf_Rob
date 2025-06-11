@@ -37,6 +37,6 @@ def fetch_buoy_history(station_id):
         df['Water Temp (°F)'] = df['WTMP'].apply(lambda x: c_to_f(x) if pd.notna(x) else None)
         df['Air Temp (°F)'] = df['ATMP'].apply(lambda x: c_to_f(x) if pd.notna(x) else None)
 
-        return df[['Timestamp', 'Wave Height (ft)', 'Dominant Period (s)', 'Water Temp (°F)', 'Air Temp (°F)']].sort_values('Timestamp')
+        return df[['Timestamp', 'Wave Height (ft)', 'Dominant Period (s)', 'Water Temp (°F)', 'Air Temp (°F)']].sort_values('Timestamp', ascending=False)
     except Exception as e:
         return pd.DataFrame([{'Error': str(e)}])
