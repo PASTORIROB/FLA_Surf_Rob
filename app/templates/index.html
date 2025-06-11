@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florida Surf Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Florida Surf Report ({{ region.capitalize() }})</h1>
+        <div class="selector">
+            {% for r in ['north', 'central', 'south'] %}
+                <a href="/?region={{ r }}">{{ r.capitalize() }}</a>{% if not loop.last %} | {% endif %}
+            {% endfor %}
+        </div>
+        {% for loc, reports in data.items() %}
+            <h2>{{ loc }}</h2>
+            <table>
+                <tr>
+                    <th>Time</th><th>Wave Height</th><th>Period</th><th>Water Temp</th><th>Air Temp</th>
+                </tr>
+                {% for row in reports %}
+                    <tr>
+                        <td>{{ row['Timestamp'] }}</td>
+                        <td>{{ row['Wave Height (ft)'] }}</td>
+                        <td>{{ row['Dominant Period (s)'] }}</td>
+                        <td>{{ row['Water Temp (°F)'] }}</td>
+                        <td>{{ row['Air Temp (°F)'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+        <div class="donate">
+            <a href="https://venmo.com/YourVenmoHandle" target="_blank">💰 Donate via Venmo</a>
+        </div>
+    </div>
+</body>
+</html>

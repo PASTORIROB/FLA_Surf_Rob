@@ -1,0 +1,32 @@
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+a {
+    color: #80cbc4;
+}
+a:hover {
+    text-decoration: underline;
+}
+.selector {
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #444;
+    padding: 6px;
+    text-align: center;
+}
+th {
+    background-color: #222;
+}
