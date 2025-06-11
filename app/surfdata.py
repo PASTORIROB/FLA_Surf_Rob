@@ -28,7 +28,7 @@ def m_to_ft(meters):
 def fetch_buoy_history(station_id):
     url = f"https://www.ndbc.noaa.gov/data/realtime2/{station_id}.txt"
     try:
-        df = pd.read_csv(url, delim_whitespace=True, skiprows=[1,2], na_values=['MM'])
+        df = pd.read_csv(url, sep=r'\s+', skiprows=[1,2], na_values=['MM'])
         df['Timestamp'] = pd.to_datetime(df[['#YY','MM','DD','hh','mm']].rename(columns={'#YY':'year','MM':'month','DD':'day','hh':'hour','mm':'minute'}))
         df = df[df['Timestamp'] > datetime.utcnow() - pd.Timedelta(days=3)]
 
