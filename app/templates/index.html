@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Florida Surf Report</title>
+    <title>Florida Surf Report by Rob Pastori</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <h2>{{ loc }}</h2>
             <table>
                 <tr>
-                    <th>Time</th><th>Wave Height</th><th>Period</th><th>Water Temp</th><th>Air Temp</th>
+                    <th>Time</th><th>Wave Height</th><th>Period</th><th>Water Temp</th></th>
                 </tr>
                 {% for row in reports %}
                     <tr>
@@ -25,13 +25,12 @@
                         <td>{{ row['Wave Height (ft)'] }}</td>
                         <td>{{ row['Dominant Period (s)'] }}</td>
                         <td>{{ row['Water Temp (°F)'] }}</td>
-                        <td>{{ row['Air Temp (°F)'] }}</td>
                     </tr>
                 {% endfor %}
             </table>
         {% endfor %}
         <div class="donate">
-            <a href="https://venmo.com/YourVenmoHandle" target="_blank">💰 Donate via Venmo</a>
+            <a href="https://venmo.com/robpastori" target="_blank">💰 Donate via Venmo</a>
         </div>
     </div>
 </body>
