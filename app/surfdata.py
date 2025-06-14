@@ -8,13 +8,13 @@ import numpy as np
 
 regions = {
     "north": {
-        "Jacksonville Beach Pier": "41112",
+        "North Florida": "41112",
     },
     "central": {
-        "New Smyrna Beach": "41113"
+        "Central Florida": "41113"
     },
     "south": {
-        "Fort Lauderdale Beach": "41114",
+        "South Florida": "41114",
     }
 }
 
