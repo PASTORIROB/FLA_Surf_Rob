@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wave Forecast</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='wave.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .chart {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+        .forecast-list {
+            margin: 30px auto;
+            font-size: 1.2em;
+            background-color: rgba(0,0,0,0.6);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        a {
+            color: #80cbc4;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌊 Florida Wave Height Forecast (Next 12 Hours)</h1>
+    <img src="{{ chart_url }}" alt="Forecast Chart" class="chart">
+    <div class="forecast-list">
+        {% for loc, height in results %}
+            <p><strong>{{ loc }}:</strong> Forecasted peak height ≈ {{ height }} ft</p>
+        {% endfor %}
+    </div>
+    <p><a href="/">← Back to Surf Report</a></p>
+</body>
+</html>
