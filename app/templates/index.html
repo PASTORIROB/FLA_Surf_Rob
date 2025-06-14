@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Florida Surf Report by Rob Pastori</title>
+    <h1 style="text-align:center; color:#80cbc4;">Florida Surf Report ({{ region.capitalize() }})</h1>
+
     <style>
         body {
             background: url("{{ url_for('static', filename='wave.jpg') }}") no-repeat center center fixed;
@@ -38,7 +40,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Florida Surf Report ({{ region.capitalize() }})</h1>
+        <h1 style="text-align:center; color:#80cbc4;">Florida Surf Report ({{ region.capitalize() }})</h1>
         <div class="selector">
             {% for r in ['north', 'central', 'south'] %}
                 <a href="/?region={{ r }}">{{ r.capitalize() }}</a>{% if not loop.last %} | {% endif %}
