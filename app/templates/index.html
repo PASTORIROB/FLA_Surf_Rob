@@ -46,7 +46,13 @@
         </div>
         <h2 style="text-align:center;">🌊 {{ top_location }} currently has the largest waves!</h2>
         <img src="{{ chart_url }}" alt="Wave Chart" class="chart">
-        {% for loc, reports in data.items() %}
+        <div style="text-align:center; margin: 20px;">
+    <form action="/forecast">
+        <button style="font-size:1.2em; padding: 10px 20px;">📈 Forecast Next Wave</button>
+    </form>
+</div>
+
+{% for loc, reports in data.items() %}
             <h2>{{ loc }}</h2>
             <table>
                 <tr>
