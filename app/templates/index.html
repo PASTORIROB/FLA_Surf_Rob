@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Florida Surf Report by Rob Pastori</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<body>
-    <div class="container">
-        <h1>Florida Surf Report ({{ region.capitalize() }})</h1>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
+        body {
+            background: url("{{ url_for('static', filename='wave.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
         .selector {
             margin: 20px 0;
             text-align: center;
@@ -26,19 +26,31 @@
             background-color: #80cbc4;
             color: #111;
         }
+        img.chart {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 0 auto 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1>Florida Surf Report ({{ region.capitalize() }})</h1>
+        <div class="selector">
             {% for r in ['north', 'central', 'south'] %}
                 <a href="/?region={{ r }}">{{ r.capitalize() }}</a>{% if not loop.last %} | {% endif %}
             {% endfor %}
         </div>
+        <h2 style="text-align:center;">🌊 {{ top_location }} currently has the largest waves!</h2>
+        <img src="{{ chart_url }}" alt="Wave Chart" class="chart">
         {% for loc, reports in data.items() %}
             <h2>{{ loc }}</h2>
             <table>
                 <tr>
-                    <th>Time</th><th>Wave Height</th><th>Period</th><th>Water Temp</th></th>
+                    <th>Time</th><th>Wave Height</th><th>Period</th><th>Water Temp</th>
                 </tr>
                 {% for row in reports %}
                     <tr>
@@ -50,8 +62,13 @@
                 {% endfor %}
             </table>
         {% endfor %}
-        <div class="donate">
+        <div class="donate" style="text-align:center; margin: 20px;">
             <a href="https://venmo.com/robpastori" target="_blank">💰 Donate via Venmo</a>
+        </div>
+        <div style="text-align:center; margin: 20px;">
+            <form action="/forecast">
+                <button style="font-size:1.2em; padding: 10px 20px;">📈 Forecast Next Wave</button>
+            </form>
         </div>
     </div>
 </body>
