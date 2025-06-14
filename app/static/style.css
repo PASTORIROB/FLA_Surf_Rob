@@ -1,3 +1,4 @@
+<style>
 body {
     background-color: #111;
     color: #eee;
@@ -18,44 +19,26 @@ a:hover {
     margin-bottom: 20px;
 }
 table {
-    width: 100%;
-    margin-top: 10px;
     border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
 }
 th, td {
-    border: 1px solid #444;
-    padding: 6px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
     text-align: center;
 }
 th {
-    background-color: #222;
+    background-color: #00838f; /* Teal header */
+    font-weight: bold;
 }
-</style>
-table {
-        border-collapse: collapse;
-        width: 90%;
-        margin: 20px auto;
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-        color: white;
-    }
-
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px 12px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #00838f; /* Teal-ish header */
-        font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    h2 {
-        text-align: center;
-        margin-top: 40px;
-    }
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+h2 {
+    text-align: center;
+    margin-top: 40px;
+}
 </style>
